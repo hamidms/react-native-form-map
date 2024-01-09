@@ -19,7 +19,7 @@ const FormScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.form}>
-      <Text>Masukkan Data Diri:</Text>
+        <Text>Masukkan Data Diri:</Text>
         <TextInput
           style={styles.input}
           placeholder="Nama"
@@ -36,7 +36,6 @@ const FormScreen = ({ navigation }) => {
 
         <Button title="Simpan" onPress={handleNext} />
       </View>
-
       
     </View>
   );
