@@ -15,8 +15,8 @@ const HomeScreen = ({ route }) => {
       <View style={{flex: 1}}>
         <Text style={ styles.rightTitle }>{nama}</Text>
       </View>
-        <View style={{flex: 2}}>
-      <Text>Selamat Datang, {nama}!</Text>
+      <View style={{flex: 2}}>
+        <Text>Selamat Datang, {nama}!</Text>
       </View>
     </View>
   );
@@ -25,7 +25,7 @@ const HomeScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
   },
   rightTitle: {
     alignSelf: 'flex-end', 

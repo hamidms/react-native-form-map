@@ -13,23 +13,31 @@ const FormScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+
+      <View style={{flex: 1}}>
+        <Text style={ styles.rightTitle }>{nama}</Text>
+      </View>
+
+      <View style={styles.form}>
       <Text>Masukkan Data Diri:</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Nama"
+          value={nama}
+          onChangeText={(text) => setNama(text)}
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Nama"
-        value={nama}
-        onChangeText={(text) => setNama(text)}
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="Hobi"
+          value={hobi}
+          onChangeText={(text) => setHobi(text)}
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Hobi"
-        value={hobi}
-        onChangeText={(text) => setHobi(text)}
-      />
+        <Button title="Simpan" onPress={handleNext} />
+      </View>
 
-      <Button title="Lanjut" onPress={handleNext} />
+      
     </View>
   );
 };
@@ -37,9 +45,12 @@ const FormScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 10,
   },
+  form: {
+    flex: 4,
+    alignItems: 'center',
+  },  
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
@@ -48,6 +59,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     width: 200,
   },
+  rightTitle: {
+    alignSelf: 'flex-end', 
+    margin: 10,
+    fontWeight: 'bold'
+  }
 });
 
 export default FormScreen;
