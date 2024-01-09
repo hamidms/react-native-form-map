@@ -1,7 +1,6 @@
-// Import React dan komponen yang dibutuhkan
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; 
 
 const styles = StyleSheet.create({
     container: {
@@ -16,21 +15,17 @@ const styles = StyleSheet.create({
     },
    });
    
-// Buat komponen halaman profil
 const MapScreen = ({ route }) => {
-  // Ambil data nama dari route.params
   const nama = route.params ? route.params.nama : undefined;
 
   return (
     <View>
-      {/* Tampilkan nama pengguna di kanan atas layar */}
       <Text style={{ alignSelf: 'flex-end', margin: 10 }}>Halo, {nama}!</Text>
 
-      {/* Tampilkan konten profil lainnya di sini */}
       <Text>Ini adalah halaman Map Anda.</Text>
       <View style={styles.container}>
      <MapView
-       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+       provider={PROVIDER_GOOGLE} 
        style={styles.map}
        region={{
          latitude: 37.78825,
