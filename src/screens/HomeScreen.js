@@ -1,20 +1,37 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const HomeScreen = ({ route }) => {
   const nama = route.params ? route.params.nama : undefined;
 
   return (
-    <View>
-      {nama !== undefined ? (
-        <Text style={{ alignSelf: 'flex-end', margin: 10 }}>Halo, {nama}!</Text>
-      ) : (
-        <Text style={{ alignSelf: 'flex-end', margin: 10 }}>Halo, Pengguna!</Text>
-      )}
-
-      <Text>Ini adalah halaman profil Anda.</Text>
+    <View
+      style={[
+        styles.container,
+        {
+          flexDirection: 'column',
+        },
+      ]}>
+      <View style={{flex: 1}}>
+        <Text style={ styles.rightTitle }>{nama}</Text>
+      </View>
+        <View style={{flex: 2}}>
+      <Text>Selamat Datang, {nama}!</Text>
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+  },
+  rightTitle: {
+    alignSelf: 'flex-end', 
+    margin: 10,
+    fontWeight: 'bold'
+  }
+});
 
 export default HomeScreen;
